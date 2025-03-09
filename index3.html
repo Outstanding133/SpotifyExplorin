@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Navbar</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .navbar {
+            background-color: black;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .logo img {
+            width: 35px;
+        }
+
+        .icon-btn img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .icon-btn {
+            background-color: #181818;
+            border: none;
+            font-size: 18px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        .icon-btn:hover{
+            background-color: #252525;
+        }
+
+        .search-bar {
+            background-color: #181818;
+            border-radius: 50px;
+            padding: 8px;
+            width: 350px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .search-bar:hover{
+            background-color: #252525;
+        }
+
+        .search-bar input {
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 14px;
+            width: 100%;
+            padding-left: 10px;
+        }
+
+        .btn {
+            background-color: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            margin-left: auto;
+        }
+       .btn:hover{
+        color: white;
+        background-color: #252525;
+       }
+        .install {
+            color: #b3b3b3;
+            font-size: 14px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .profile {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #1db954;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 1.5em;
+        }
+
+        .playlist {
+            width: 523px;
+            height: 723px;
+            background: #121212;
+            border-radius: 10px;
+            position: relative;
+            padding: 10px;
+        }
+
+        .lib {
+            color: rgb(171, 255, 4);
+            padding-left: 0px;
+        }
+
+        .container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h4 {
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            padding-left: 25px;
+            padding-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .container1 {
+            display: flex;
+        }
+
+        .create {
+            display: flex;
+            align-items: center;
+            background-color: #181818;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            position: absolute;
+            top: 0.2px;
+            right: 45px;
+        }
+
+        .create:hover {
+            background-color: #252525;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            top: 10px;
+            color: #b3b3b3;
+        }
+
+        span.lib {
+            color: rgb(255, 255, 255);
+            padding-left: 10px;
+        }
+
+        .playl {
+            display: flex;
+            align-items: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            position: absolute;
+            top: 80px;
+            right: px;
+        }
+
+        .playl:hover {
+            background-color: #252525;
+        }
+
+        .search-logo {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+        }
+
+        .search-logo img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .like-song {
+            position: absolute;
+            top: 120px;
+        }
+
+        .like-song img {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .liked-text {
+            position: absolute;
+            top: 120px;
+            left: 75px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .lib-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            padding-left: 10px;
+        }
+
+        .lib-container img {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .liked-text2 {
+            position: absolute;
+            top: 125px;
+            left: 85px;
+            color: white;
+            font-size: 15px;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+
+        .pin {
+            position: absolute;
+            top: 145px;
+            left: 58px;
+        }
+
+        .pin img {
+            width: 13px;
+            height: 13px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        .top {
+            position: absolute;
+            top: 175px;
+            left: 10px;
+        }
+
+        .top img {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .top-text {
+            position: absolute;
+            top: 175px;
+            left: 75px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .top-text2 {
+            position: absolute;
+            top: 180px;
+            left: 85px;
+            color: white;
+            font-size: 15px;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+
+        .recent {
+            position: absolute;
+            top: 75px;
+            right: 20px;
+            color: #b1a8a8;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+            transform: translateX(-50%) scale(0.8);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .recent:hover {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+            color: #ffffff;
+        }
+
+        .song {
+            background-color: #1f1f1f;
+            margin-left: 10px;
+            height: 723px;
+            width: 100%;
+            border-radius: 10px;
+            position: relative;
+            padding: 10px;
+        }
+
+        .all-btn {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 15px;
+            left: 50px;
+        }
+
+        .music-btn {
+            display: flex;
+            align-items: center;
+            background-color: #181818;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            left: 122px;
+            top: 15px;
+        }
+
+        .music-btn:hover {
+            background-color: #252525;
+        }
+
+        .podcast-btn {
+            display: flex;
+            align-items: center;
+            background-color: #181818;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            left: 220px;
+            top: 15px;
+        }
+
+        .podcast-btn:hover {
+            background-color: #252525;
+        }
+
+        .popular {
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .popular:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .song1 {
+            position: relative;
+            top: 100px;
+            left: 10px;
+            height: 50px;
+        }
+
+        .song1 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song1-text {
+            position: absolute;
+            top: 320px;
+            left: 40px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .song2 {
+            position: relative;
+            top: 50px;
+            left: 230px;
+            height: 0px;
+        }
+
+        .song2 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song2-text {
+            position: absolute;
+            top: 320px;
+            left: 250px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .song3 {
+            position: relative;
+            top: 50px;
+            left: 450px;
+            height: 0px;
+        }
+
+        .song3 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song3-text {
+            position: absolute;
+            top: 320px;
+            left: 480px;
+            color: white;
+            font-size: 15px;
+            margin-top: 40px;
+            font-size: 19px;
+        }
+
+        .song4,
+        .song5,
+        .song6 {
+            position: relative;
+            top: 300px;
+            left: 10px;
+            height: 0px;
+        }
+
+        .song4 img,
+        .song6 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song5 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 230px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song6 img {
+            width: 200px;
+            height: 200px;
+            margin-left: 450px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .song4-text,
+        .song5-text,
+        .song6-text {
+            position: absolute;
+            bottom: 90px;
+            color: white;
+            font-size: 19px;
+        }
+
+        .song4-text {
+            left: 60px;
+        }
+
+        .song5-text {
+            left: 290px;
+        }
+
+        .song6-text {
+            left: 480px;
+        }
+
+        
+        .player-controls {
+            width: 100%;
+            height: 90px;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .player-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .player-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #969696;
+            font-size: 20px;
+        }
+
+        .play-button {
+            background-color: #aaa;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+        }
+
+        .progress-bar-container {
+            width: 70%;
+            display: flex;
+            align-items: center;
+        }
+
+        .time-indicator {
+            color: #aaa;
+            font-size: 12px;
+            margin: 0 10px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background-color: #333;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            width: 30%;
+            background-color: #b1b1b1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="assests/Spotify_Primary_Logo_RGB_White.png" alt="Spotify">
+        </div>
+
+        <button class="icon-btn">
+            <img src="assests/001-building.png" alt="Home">
+        </button>
+
+        <div class="search-bar">
+            <input type="text" placeholder="What do you want to play?">
+        </div>
+
+        <button class="btn">Explore Premium</button>
+        <div class="install">Install App</div>
+        <div class="profile">O</div>
+    </div>
+    <div class="container1">
+        <div class="playlist">
+            <div class="lib-container">
+                <img src="assests/music-album.png" alt="">
+                <span class="lib">Your Library</span>
+            </div>
+            <div class="container">
+                <button class="create">
+                    <span class="icon">＋</span>
+                    Create
+                </button>
+                <span class="arrow">➝</span>
+            </div>
+            <div>
+                <button class="playl"><span>Playlist</span></button>
+            </div>
+            <div class="search-logo">
+                <img src="assests/search.png" alt="Search">
+            </div>
+            <div class="like-song">
+                <img src="https://alfasareekkan.github.io/spotify/assets/img/liked-songs-300.png" alt=" likedsong">
+            </div>
+            <div class=liked-text> Liked song
+            </div>
+            <div class="liked-text2"> Playlist•3Songs
+
+            </div>
+            <div class="pin">
+                <img src="assests/push-pin.png" alt="pin">
+            </div>
+            <div class="top">
+                <img src="assests/top2023.jpg" alt="top2023">
+            </div>
+            <div class="top-text">
+                Your Top 2023
+            </div>
+            <div class="top-text2">
+                Playlist•Spotify
+            </div>
+            <div class="recent">
+                Recent
+            </div>
+        </div>
+        <div class="song">
+            <div class="all"><button class="all-btn"><span class="all-icon">All
+
+                    </span>
+                </button>
+            </div>
+            <div class="music">
+                <button class="music-btn">
+                    <span music-icon>
+                        Music
+                    </span>
+
+                </button>
+            </div>
+            <div class="podcast">
+                <button class="podcast-btn">
+                    <span podcast-icon>
+                        Podcast
+                    </span>
+                </button>
+            </div>
+            <div class="popular">
+                Popular albums and singles
+            </div>
+            <div class="song1">
+                <img src="assests/release_201712_d6aebc8455b303340e188c20fd4f562a2ab980e0.jpg" alt="">
+            </div>
+            <div class="song1-text">
+             Superman - Eminem
+            </div>
+            <div class="song2">
+                <img src="assests/release_201712_d6aebc8455b303340e188c20fd4f562a2ab980e0.jpg" alt=""> 
+            </div>
+            <div class="song2-text">
+                Superman - Eminem
+            </div>
+            <div class="song3">
+                <img src="assests/release_201712_d6aebc8455b303340e188c20fd4f562a2ab980e0.jpg" alt="">
+        </div>
+        <div class="song3-text">
+            Superman - Eminem
+        </div>
+        <div class="song4">
+            <img src="assests/lights.jpeg" alt="Song 4">
+        </div>
+        <div class="song4-text">
+            Blinding Lights
+        </div>
+
+        <div class="song5">
+            <img src="assests/shape.jpeg" alt="Song 5">
+        </div>
+        <div class="song5-text">
+            Shape of You 
+        </div>
+
+        <div class="song6">
+            <img src="assests/starboy.jpeg" alt="Song 6">
+        </div>
+        <div class="song6-text">
+            Starboy - The Weeknd
+        </div>
+    </div>
+    </div>
+
+    <!-- Player Controls Bar -->
+   <div class="player-controls">
+        <div class="player-buttons">
+            <button class="player-button">⏮</button>
+            <button class="player-button">⏪</button>
+            <button class="player-button play-button">⏸</button>
+            <button class="player-button">⏩</button>
+            <button class="player-button">⏭</button>
+        </div>
+        <div class="progress-bar-container">
+            <div class="time-indicator">--:--</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="time-indicator">--:--</div>
+        </div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>
